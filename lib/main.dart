@@ -16,18 +16,11 @@ Future<void> main() async {
       apiKey: "AIzaSyCSvjTtpt5XrV-aZjkdgnKE_Oqq1rJlgvg",
       appId: "1:1040399237045:web:062693528f30e5db6be3fc",
       messagingSenderId: "1040399237045",
-      projectId: "multi-timer-4e459");
+      projectId: "multi-timer-4e459"
+  );
   await Firebase.initializeApp(options: config);
-  log(FirebaseDatabase.instance.toString());
 
-  /* Future<void> getData() async {
-    final querySnapshot = await UserCollectionReference().get();
-    final allUsers = querySnapshot.docs.map((userData) => userData.data).toList();
-    log(allUsers.toString());
-  }*/
-  // await getData();
   checkConnection();
-
   runApp(const MyApp());
 }
 
@@ -100,25 +93,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          TextButton(
-              onPressed: () {
-                testConnection('lucas.dabout@sts-sio-caen.info', 'azerty');
-              },
-              child: Text('Connexion')),
-          UsersList(),
-          TimersList(),
-          TextButton(
-              onPressed: () {
-                disconnect();
-              },
-              child: Text('Déconnexion $_currentUserName')),
-        ],
-      )),
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              TextButton(
+                  onPressed: () {
+                    testConnection('lucas.dabout@sts-sio-caen.info', 'azerty');
+                  },
+                  child: Text('Connexion')),
+              UsersList(),
+              TimersList(),
+              TextButton(
+                  onPressed: () {
+                    disconnect();
+                  },
+                  child: Text('Déconnexion $_currentUserName')),
+            ],
+          )),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
